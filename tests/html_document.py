@@ -17,107 +17,25 @@ class TestHTMLDocument(unittest.TestCase):
         )
         self.assertEqual(
             str(HTMLDocument(
-                body=[
-                    HTMLElement(
-                        tag="h1", 
-                        innerHTML="Hey",
-                        style="color: green;",
-                        ),
-                    HTMLElement(
-                        tag="h2", 
-                        innerHTML="How is it going?",
-                        style="color: cyan;",
-                        ),
-            ])),
-            create_test_case([],[
-                HTMLElement(
-                    tag="h1", 
-                    innerHTML="Hey",
-                    style="color: green;",
-                    ),
-                HTMLElement(
-                    tag="h2", 
-                    innerHTML="How is it going?",
-                    style="color: cyan;",
-                    ),
-            ])
+                body=[HTMLElement(tag="h1")])),
+            create_test_case(
+                [],
+                [HTMLElement(tag="h1")])
         )
         self.assertEqual(
             str(HTMLDocument(
-                head=[
-                    HTMLElement(
-                        tag="h1", 
-                        innerHTML="Hey",
-                        style="color: green;",
-                        ),
-                    HTMLElement(
-                        tag="h2", 
-                        innerHTML="How is it going?",
-                        style="color: cyan;",
-                        ),
-            ])),
-            create_test_case([
-                HTMLElement(
-                    tag="h1", 
-                    innerHTML="Hey",
-                    style="color: green;",
-                    ),
-                HTMLElement(
-                    tag="h2", 
-                    innerHTML="How is it going?",
-                    style="color: cyan;",
-                    ),
-            ],[])
+                head=[HTMLElement(tag="h1")])),
+            create_test_case(
+                [HTMLElement(tag="h1")],
+                [])
         )
         self.assertEqual(
             str(HTMLDocument(
-                head=[
-                    HTMLElement(
-                        tag="h1", 
-                        innerHTML="Hey",
-                        style="color: green;",
-                        ),
-                    HTMLElement(
-                        tag="h2", 
-                        innerHTML="How is it going?",
-                        style="color: cyan;",
-                        ),
-                ],
-                body=[
-                    HTMLElement(
-                        tag="h1", 
-                        innerHTML="Hey",
-                        style="color: green;",
-                        ),
-                    HTMLElement(
-                        tag="h2", 
-                        innerHTML="How is it going?",
-                        style="color: cyan;",
-                        ),
-            ])),
-            create_test_case([
-                HTMLElement(
-                    tag="h1", 
-                    innerHTML="Hey",
-                    style="color: green;",
-                    ),
-                HTMLElement(
-                    tag="h2", 
-                    innerHTML="How is it going?",
-                    style="color: cyan;",
-                    ),
-            ],[
-                HTMLElement(
-                    tag="h1", 
-                    innerHTML="Hey",
-                    style="color: green;",
-                    ),
-                HTMLElement(
-                    tag="h2", 
-                    innerHTML="How is it going?",
-                    style="color: cyan;",
-                    ),
-            ])
+                head=[HTMLElement(tag="h1")],
+                body=[HTMLElement(tag="h1")])),
+            create_test_case(
+                [HTMLElement(tag="h1")],
+                [HTMLElement(tag="h1")])
         )
 
 if __name__ == '__main__':
