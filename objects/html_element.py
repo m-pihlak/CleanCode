@@ -24,5 +24,5 @@ class HTMLElement:
             for key, value in self.__arguments.items()
         ])
     
-    def __str__(self):
+    def __repr__(self):
         return f"<{self.__tag} {self.args()}>{self.__innerHTML}</{self.__tag}>"
