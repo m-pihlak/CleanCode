@@ -1,4 +1,4 @@
-from .html_element import HTMLElement
+from objects import HTMLElement
 from typing import List
 
 class HTMLDocument:
